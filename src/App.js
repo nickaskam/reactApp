@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
   return (
-    <div classname="App">
+    <div>
       <Navbar dark color="primary">
         <div classname="container">
           <NavbarBrand href="/"> Ristorante Con Fusion</NavbarBrand>
