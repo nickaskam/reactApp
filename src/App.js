@@ -19,7 +19,7 @@ class App extends React.Component {
 	  return (
 	    <div>
 	      <Navbar dark color="primary">
-	        <div className="container">
+	        <div classame="container">
 	          <NavbarBrand href="/"> Ristorante Con Fusion</NavbarBrand>
 	        </div>
 	      </Navbar>
