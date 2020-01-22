@@ -35,11 +35,11 @@ class Dishdetail extends Component {
 	renderComments(comments) {
 		if (comments != null) {
 			
-			const comms = comments.map(co => {
+			const comms = comments.map(comm => {
 				return(
 					<div>
-						<li>{co.comment}</li>
-						<li>- {co.author}, {co.date}</li>
+						<li>{comm.comment}</li>
+						<li>- {comm.author}, {comm.date}</li>
 					</div>
 				);
 			})
