@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
 
-class Dishdetail extends Component {
+class DishDetail extends Component {
+
+	constructor(props) {
+		super(props);
+	}
 
 	renderDish(dish) {
 		if (dish != null) {
@@ -39,7 +43,7 @@ class Dishdetail extends Component {
 				return(
 					<div>
 						<li>{comm.comment}</li>
-						<li>- {comm.author}, {comm.date}</li>
+						<li>- {comm.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comm.date)))}</li>
 					</div>
 				);
 			})
@@ -59,11 +63,13 @@ class Dishdetail extends Component {
 
 	render() {
 		return (
-			<div>
-				{this.renderDish(this.props.selectedDish)}
+			<div className="container">
+				<div>
+					{this.renderDish(this.props.selectedDish)}
+				</div>
 			</div>
 		)
 	}
 }
 
-export default Dishdetail;
+export default DishDetail;
