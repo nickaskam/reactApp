@@ -61,9 +61,9 @@ class CommentForm extends Component {
 								</Col>
 							</Row>
 							<Row className="form-group">
-                                <Label htmlFor="yourname" md={4}>Your Name</Label>
+                                <Label htmlFor="author" md={4}>Your Name</Label>
                                 <Col md={12}>
-                                    <Control.text model=".yourname" id="yourname" name="yourname"
+                                    <Control.text model=".author" id="author" name="author"
                                         placeholder="Your Name"
                                         className="form-control" 
                                         validators={{
@@ -72,7 +72,7 @@ class CommentForm extends Component {
                                         />
                                     <Errors
                                         className="text-danger"
-                                        model=".yourname"
+                                        model=".author"
                                         show="touched"
                                         messages={{
                                             required: 'Required',
@@ -107,13 +107,15 @@ class CommentForm extends Component {
 
 	function RenderDish({dish}) {
 		return(
-			<Card>
-				<CardImg width="100%" src={dish.image} alt={dish.name} />
-				<CardBody>
-					<CardTitle>{dish.name}</CardTitle>
-					<CardText>{dish.description}</CardText>
-				</CardBody>
-			</Card>
+			<div className="col-12 col-md-5 m-1">
+				<Card>
+					<CardImg width="100%" src={dish.image} alt={dish.name} />
+					<CardBody>
+						<CardTitle>{dish.name}</CardTitle>
+						<CardText>{dish.description}</CardText>
+					</CardBody>
+				</Card>
+			</div>
 		);
 	}
 
@@ -152,14 +154,10 @@ class CommentForm extends Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-12 col-md-5 m-1">
-							<RenderDish dish={props.dish} />
-						</div>
-						<div className="col-12 col-md-5 m5">
-							<RenderComments comments={props.comments}
-								addComment={props.addComment}
-								dishId={props.dish.id} />
-						</div>
+						<RenderDish dish={props.dish} />
+						<RenderComments comments={props.comments}
+							addComment={props.addComment}
+							dishId={props.dish.id} />
 					</div>
 				</div>
 			)
