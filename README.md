@@ -1,5 +1,7 @@
 Hello
 
+This is a react app built to show a restaurant's site 
+
 After downloading, use `npm start` to launch the application
 
 Runs the app in the development mode.<br />
